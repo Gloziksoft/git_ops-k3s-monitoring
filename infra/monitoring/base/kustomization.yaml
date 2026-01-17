@@ -1,0 +1,6 @@
+resources:
+  - namespace.yaml
+  - prometheus
+  - grafana
+  - node-exporter
+  - kube-state-metrics

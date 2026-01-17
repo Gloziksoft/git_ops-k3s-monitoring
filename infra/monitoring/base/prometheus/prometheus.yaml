@@ -1,0 +1,12 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: k3s-prometheus
+  namespace: monitoring
+spec:
+  serviceMonitorSelector: {}
+  resources:
+    requests:
+      cpu: 100m
+      memory: 200Mi
+
