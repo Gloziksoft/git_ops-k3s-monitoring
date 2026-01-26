@@ -4,9 +4,19 @@ metadata:
   name: k3s-prometheus
   namespace: monitoring
 spec:
-  serviceMonitorSelector: {}
+  replicas: 1
+
+  serviceMonitorSelector:
+    matchLabels:
+      release: prometheus
+
+  serviceMonitorNamespaceSelector:
+    matchNames:
+      - monitoring
+
   resources:
     requests:
-      cpu: 100m
-      memory: 200Mi
+      cpu: 200m
+      memory: 512Mi
 
+  enableAdminAPI: false
